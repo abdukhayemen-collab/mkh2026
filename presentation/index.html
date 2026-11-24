@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>كيف تخدع صورة واحدة ملايين العقول — مروة خليل هزاع</title>
+<meta name="description" content="عرض تفاعلي عن الصور التي تخدع العقل: الإدراك، الإطار، الذكاء الاصطناعي، وكيف نصدّق ما نراه. إعداد مروة خليل هزاع.">
+<meta name="theme-color" content="#07090c">
+<meta property="og:title" content="كيف تخدع صورة واحدة ملايين العقول">
+<meta property="og:description" content="عرض تفاعلي — إعداد مروة خليل هزاع">
+<meta property="og:type" content="website">
+<link rel="icon" href="../favicon-32.png" sizes="32x32">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/ReemKufi-600-arabic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Tajawal-400-arabic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Almarai-700-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/eye.jpg">
+<link rel="stylesheet" href="assets/css/deck.css">
+</head>
+<body>
+
+<a class="skip" href="#deck">تجاوز إلى العرض</a>
+
+<div id="cursor" class="cursor" aria-hidden="true"><span class="cursor__label">اسحب</span></div>
+<div id="cursorDot" class="cursor-dot" aria-hidden="true"></div>
+<canvas id="dust" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="chrome">
+  <a class="chrome__brand" href="#slide-1" aria-label="العودة إلى البداية">
+    <span class="brand-mark">MKH</span>
+    <span class="brand-line"></span>
+    <span class="brand-sub">عرض تفاعلي</span>
+  </a>
+  <div class="chrome__side">
+    <span class="chrome__meta">مروة خليل هزاع <span class="dot"></span> <span class="num">2026</span></span>
+    <button class="icon-btn" id="helpBtn" type="button" aria-label="اختصارات العرض" title="اختصارات العرض">؟</button>
+    <button class="icon-btn" id="fsBtn" type="button" aria-label="ملء الشاشة" title="ملء الشاشة (F)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="progress" aria-hidden="true"><i id="progressFill"></i></div>
+
+<main class="deck" id="deck">
+
+<!-- ═══════════════════════ 01 · الغلاف ═══════════════════════ -->
+<section class="slide slide--hero" id="slide-1" data-title="الافتتاحية" data-theme="dark" aria-label="الشريحة 1: الافتتاحية">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="kicker" data-reveal style="--d:.05s">
+        <span class="kicker__dot"></span>
+        عرض تفاعلي
+        <span class="kicker__sep"></span>
+        <span class="num">12</span> شريحة
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line" style="--i:0"><span>كيف تخدع</span></span>
+        <span class="line line--gold" style="--i:1"><span>صورة واحدة</span></span>
+        <span class="line" style="--i:2"><span>ملايين العقول</span></span>
+      </h1>
+
+      <p class="hero-lede" data-reveal style="--d:.62s">ليست عن الصور التي تُزيَّف… بل عن العقل الذي يمنحها التصديق.</p>
+
+      <div class="hero-presenter" data-reveal style="--d:.78s">
+        <span class="presenter__label">إعداد</span>
+        <strong>مروة خليل هزاع</strong>
+        <span class="presenter__line"></span>
+      </div>
+
+      <div class="hero-actions" data-reveal style="--d:.92s">
+        <button class="btn btn--solid" data-next type="button">
+          <span>ابدأ الرحلة</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg>
+        </button>
+        <span class="hero-hint"><span class="mouse" aria-hidden="true"></span> حرّك المؤشر — العين تتبعك</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal style="--d:.18s">
+      <div class="eye-medallion" id="eyeMedallion">
+        <svg class="orbit-text" viewBox="0 0 400 400" aria-hidden="true">
+          <defs>
+            <path id="orbitPath" d="M 200,200 m -152,0 a 152,152 0 1,1 304,0 a 152,152 0 1,1 -304,0"/>
+          </defs>
+          <text><textPath href="#orbitPath" startOffset="0%">ONE IMAGE · MILLIONS OF MINDS · ONE IMAGE · MILLIONS OF MINDS · </textPath></text>
+        </svg>
+        <span class="eye-ring" aria-hidden="true"></span>
+        <span class="eye-ring eye-ring--2" aria-hidden="true"></span>
+        <div class="eye-frame">
+          <img src="assets/img/eye.jpg" alt="عين بشرية عن قرب" fetchpriority="high">
+          <span class="eye-lid eye-lid--top" aria-hidden="true"></span>
+          <span class="eye-lid eye-lid--bottom" aria-hidden="true"></span>
+          <span class="eye-glint" aria-hidden="true"></span>
+        </div>
+        <span class="eye-caption">لا ترمش</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <span class="hero-foot__quote">أخطر صورة… هي التي لا تشكّ فيها.</span>
+    <span class="hero-foot__line"></span>
+    <span class="hero-foot__hint num">SCROLL · SWIPE · ARROWS</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 02 · الالتباس ═══════════════════════ -->
+<section class="slide slide--light slide--duck" id="slide-2" data-title="الالتباس" data-theme="light" aria-label="الشريحة 2: الالتباس">
+  <div class="split">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 01 · الالتباس</div>
+      <h2 class="h2" data-reveal style="--d:.06s">أول خدعة:<br><em>عقلك يختار</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">هذه ليست بطة ولا أرنبًا. إنها خطوط… وأنت من يمنحها الهوية. الدماغ يثبّت تفسيرًا واحدًا، ثم يخفيه عنك.</p>
+
+      <div class="choice" data-reveal style="--d:.22s" role="group" aria-label="ماذا رأيت أولًا؟">
+        <span class="choice__label">ماذا رأيت أولًا؟</span>
+        <button class="chip" type="button" data-choice="duck" aria-pressed="false">بطة</button>
+        <button class="chip" type="button" data-choice="rabbit" aria-pressed="false">أرنب</button>
+      </div>
+
+      <div class="reveal-box" data-reveal style="--d:.3s">
+        <span class="reveal-box__mark" aria-hidden="true">”</span>
+        <p id="duckReveal">اختر تفسيرًا… ثم جرّب أن ترى الآخر. هل استطعت؟ هذا هو الجهد الذي يبذله عقلك كل يوم ليختار لك عالمًا واحدًا.</p>
+      </div>
+
+      <p class="source" data-reveal style="--d:.38s"><span class="num">DUCK–RABBIT</span> · Jastrow, 1899</p>
+    </div>
+
+    <figure class="duck-card visual" data-reveal style="--d:.12s" data-cursor="pointer" aria-label="خدعة البطة والأرنب">
+      <div class="duck-card__inner">
+        <img src="assets/img/duck-rabbit.png" alt="رسم خطي يمكن رؤيته بطة أو أرنبًا" loading="lazy">
+        <span class="ann ann--duck"><i></i>المنقار</span>
+        <span class="ann ann--rabbit"><i></i>الأذنان</span>
+      </div>
+      <figcaption><span class="num">01</span> صورة واحدة · تفسيران</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 03 · الفراغ ═══════════════════════ -->
+<section class="slide slide--dark slide--kanizsa" id="slide-3" data-title="الفراغ" data-theme="dark" aria-label="الشريحة 3: الفراغ">
+  <div class="split">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 02 · الفراغ</div>
+      <h2 class="h2" data-reveal style="--d:.06s">الثقب<br><em>الذي تملؤه أنت</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">لا يوجد مثلث في هذه الصورة. فقط ثلاث دوائر مقطوعة. لكن دماغك يرسم الحواف… لأن رؤية شكل ناقص أهون عليه من رؤية لا شيء.</p>
+
+      <button class="btn btn--ghost" type="button" id="kanizsaToggle" aria-pressed="false" data-reveal style="--d:.22s">
+        <span>أظهر ما رسمه عقلك</span>
+        <span class="btn__icon" aria-hidden="true">+</span>
+      </button>
+
+      <div class="inline-note" data-reveal style="--d:.3s">
+        <span class="inline-note__dot"></span>
+        هذا ليس خللًا. إنه اختصار… وهذا هو ثمنه.
+      </div>
+
+      <p class="source" data-reveal style="--d:.38s"><span class="num">KANIZSA TRIANGLE</span> · 1955</p>
+    </div>
+
+    <figure class="kanizsa-card visual" data-reveal style="--d:.12s">
+      <div class="kanizsa-card__inner" id="kanizsaCard">
+        <svg viewBox="0 0 800 800" role="img" aria-label="مثلث كانيزا الوهمي">
+          <g class="pacman pacman--tl">
+            <path d="M190 190 L297.2 214.7 A110 110 0 1 1 214.7 297.2 Z"/>
+          </g>
+          <g class="pacman pacman--tr">
+            <path d="M610 190 L585.3 297.2 A110 110 0 1 1 502.8 214.7 Z"/>
+          </g>
+          <g class="pacman pacman--b">
+            <path d="M400 650 L341.7 556.7 A110 110 0 1 1 458.3 556.7 Z"/>
+          </g>
+          <polygon class="ghost-triangle" points="280,242 520,242 400,580"/>
+        </svg>
+        <span class="kanizsa-note kanizsa-note--1">لا حواف…</span>
+        <span class="kanizsa-note kanizsa-note--2" id="kanizsaNote">لكنك تراها.</span>
+      </div>
+      <figcaption><span class="num">02</span> الحواف التي لا وجود لها</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 04 · اللون ═══════════════════════ -->
+<section class="slide slide--light slide--checker" id="slide-4" data-title="اللون" data-theme="light" aria-label="الشريحة 4: اللون">
+  <div class="split split--reverse">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 03 · الضوء</div>
+      <h2 class="h2" data-reveal style="--d:.06s">اللون ليس<br><em>في الصورة</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">المربعان A و B يحملان القيمة نفسها بالضبط. لكن B يبدو أفتح… لأنه يقع داخل ظل. دماغك لا يقيس اللون، بل يطرح الظل أولًا.</p>
+
+      <div class="checker-copy" data-reveal style="--d:.22s">
+        <div class="checker-copy__row"><span class="swatch swatch--a"></span><span>A · خارج الظل</span><b class="num">#7A7A7A</b></div>
+        <div class="checker-copy__row"><span class="swatch swatch--b"></span><span>B · داخل الظل</span><b class="num" id="bHexSide">#7A7A7A</b></div>
+      </div>
+
+      <button class="btn btn--ghost" type="button" id="checkerProof" aria-pressed="false" data-reveal style="--d:.3s">
+        <span>اكشف الخدعة</span>
+        <span class="btn__icon" aria-hidden="true">◎</span>
+      </button>
+
+      <div class="inline-note" data-reveal style="--d:.38s">
+        <span class="inline-note__dot"></span>
+        الظل نفسه ليس في الصورة… هو شيء خارج الإطار.
+      </div>
+
+      <p class="source" data-reveal style="--d:.44s"><span class="num">ADELSON’S CHECKER SHADOW</span> · 1995</p>
+    </div>
+
+    <div class="checker-wrap visual" data-reveal style="--d:.1s">
+      <div class="checkerboard" id="checkerboard" aria-label="خدعة ظل رقعة الشطرنج">
+        <div class="checker-grid" id="checkerGrid"></div>
+        <div class="checker-shadow"></div>
+        <span class="checker-label" style="--x:31.25%;--y:31.25%">A</span>
+        <span class="checker-label" style="--x:56.25%;--y:68.75%">B</span>
+        <span class="proof proof--a"></span>
+        <span class="proof proof--b"></span>
+      </div>
+
+      <div class="checker-controls">
+        <label for="shadowRange">قوة الظل</label>
+        <input type="range" id="shadowRange" min="0" max="70" value="35" step="1">
+        <output class="num" id="shadowOut">35%</output>
+      </div>
+
+      <div class="checker-readout">
+        <span>A <b class="num">#7A7A7A</b></span>
+        <span>B <b class="num" id="bHex">#7A7A7A</b></span>
+        <em id="matchBadge">تطابق</em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 05 · الحركة ═══════════════════════ -->
+<section class="slide slide--dark slide--snakes" id="slide-5" data-title="الحركة" data-theme="dark" aria-label="الشريحة 5: الحركة">
+  <div class="split">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 04 · الحركة</div>
+      <h2 class="h2" data-reveal style="--d:.06s">الحركة<br><em>التي لا تحدث</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">هذه الصورة ساكنة. تمامًا. لكن حين تتحرك عينك فوقها، يقرأ الدماغ التغيّر كأنه دوران. ثبّت نظرك على النقطة… وستهدأ الدنيا.</p>
+
+      <div class="snake-steps" data-reveal style="--d:.22s">
+        <span class="snake-step"><b class="num">01</b> ثبّت نظرك على النقطة الذهبية</span>
+        <span class="snake-step"><b class="num">02</b> لا تتبع الشكل بعينك</span>
+        <span class="snake-step"><b class="num">03</b> انتظر <span class="num">10</span> ثوانٍ</span>
+      </div>
+
+      <div class="snake-verdict" id="snakeVerdict" data-reveal style="--d:.3s">جاهز؟ اضغط النقطة وابدأ التثبيت.</div>
+
+      <div class="snake-actions" data-reveal style="--d:.36s">
+        <button class="chip" type="button" data-snake="stopped">خفّ الدوران</button>
+        <button class="chip" type="button" data-snake="still">ما زال يدور</button>
+      </div>
+
+      <p class="source" data-reveal style="--d:.42s"><span class="num">ROTATING SNAKES</span> · Kitaoka, 2003</p>
+    </div>
+
+    <div class="snake-wrap visual" data-reveal style="--d:.12s">
+      <div class="snake-stage">
+        <img src="assets/img/snakes.png" alt="نمط حلزوني يبدو متحركًا رغم أنه صورة ثابتة" loading="lazy">
+        <button class="fixation" id="fixation" type="button" aria-label="ابدأ تثبيت النظر لمدة عشر ثوانٍ">
+          <span class="fixation__ring" aria-hidden="true"></span>
+          <span class="fixation__dot" aria-hidden="true"></span>
+          <span class="fixation__num num" id="snakeCount">10</span>
+        </button>
+        <span class="still-stamp num">STILL IMAGE · 0 FPS</span>
+      </div>
+      <p class="snake-note"><span class="dot"></span> ملف PNG واحد. لا إطارات. لا فيديو.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 06 · الوجه ═══════════════════════ -->
+<section class="slide slide--dark slide--mars" id="slide-6" data-title="الوجه" data-theme="dark" aria-label="الشريحة 6: الوجه">
+  <div class="split split--reverse">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 05 · الوجه</div>
+      <h2 class="h2" data-reveal style="--d:.06s">وجه في الصخرة…<br><em>وقصة في السماء</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">في <span class="num">1976</span> رأى العالم وجهًا على المريخ. صورة رديئة، ظلّ، ورغبة في المعنى. صورة أوضح لاحقًا قالت شيئًا آخر: صخرة.</p>
+
+      <div class="mars-facts" data-reveal style="--d:.22s">
+        <div><span class="num">1976</span><small>وجه</small></div>
+        <span class="mars-facts__arrow" aria-hidden="true">←</span>
+        <div><span class="num">2001</span><small>صخرة</small></div>
+      </div>
+
+      <button class="btn btn--ghost mars-flip" type="button" id="marsFlip" aria-pressed="false" data-reveal style="--d:.3s">
+        <span id="marsFlipLabel">اقلب الصورة</span>
+        <span class="btn__icon" aria-hidden="true">↻</span>
+      </button>
+
+      <div class="inline-note" data-reveal style="--d:.38s">
+        <span class="inline-note__dot"></span>
+        كلما قلّت البيانات، زاد الخيال. هذا اسمه: <b>باريدوليا</b>.
+      </div>
+
+      <p class="source" data-reveal style="--d:.44s"><span class="num">VIKING 1 · MARS GLOBAL SURVEYOR</span> / NASA-JPL</p>
+    </div>
+
+    <div class="mars-wrap visual" data-reveal style="--d:.12s">
+      <div class="mars-card" id="marsCard" data-cursor="pointer">
+        <div class="mars-inner">
+          <figure class="mars-face mars-face--front">
+            <img src="assets/img/mars-1976.jpg" alt="صورة وجه على المريخ كما ظهرت عام 1976" loading="lazy">
+            <svg class="face-lines" viewBox="0 0 906 732" aria-hidden="true">
+              <g>
+                <path d="M345 315 q35 -22 70 0 q-35 20 -70 0"/>
+                <path d="M492 315 q35 -22 70 0 q-35 20 -70 0"/>
+                <path d="M452 340 q-12 60 4 86 q16 -8 30 4"/>
+                <path d="M395 468 q55 32 112 -2"/>
+              </g>
+            </svg>
+            <span class="mars-year num">1976</span>
+            <figcaption>وجه؟</figcaption>
+          </figure>
+          <figure class="mars-face mars-face--back">
+            <img src="assets/img/mars-hirise-raw.jpg" alt="صورة أوضح لصخرة المريخ عام 2001" loading="lazy">
+            <span class="mars-year num">2001</span>
+            <figcaption>صخرة.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="mars-caption" id="marsCaption">اسحب أو اضغط لقلب الصورة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 07 · الإطار ═══════════════════════ -->
+<section class="slide slide--light slide--crop" id="slide-7" data-title="الإطار" data-theme="light" aria-label="الشريحة 7: الإطار">
+  <div class="crop-layout">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 06 · الإطار</div>
+      <h2 class="h2" data-reveal style="--d:.06s">القصة تسكن<br><em>في الإطار</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">نفس الصورة… ثلاث حكايات. حرّك الإطار، ولاحظ كيف يتبدل البطل: رجل، مكان، أو وحدة.</p>
+
+      <div class="crop-presets" data-reveal style="--d:.22s" role="group" aria-label="اختر كادرًا">
+        <button class="chip" type="button" data-preset="place">المكان</button>
+        <button class="chip is-active" type="button" data-preset="man">الرجل</button>
+        <button class="chip" type="button" data-preset="solo">الوحدة</button>
+      </div>
+
+      <blockquote class="pull" data-reveal style="--d:.3s">
+        <span>“</span>
+        <p>لا تكذب الصورة…<br>الكادر هو الذي يروي.</p>
+      </blockquote>
+
+      <p class="source" data-reveal style="--d:.38s"><span class="num">SAME PIXELS</span> · THREE STORIES</p>
+    </div>
+
+    <div class="crop-visual visual" data-reveal style="--d:.1s">
+      <div class="crop-stage" id="cropStage">
+        <img src="assets/img/field.jpg" alt="رجل يقف في حقل واسع أمام جبال" loading="lazy">
+        <div class="viewfinder" id="viewfinder" data-cursor="drag" role="slider" aria-label="كادر القص" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+          <span class="vf-corner vf-corner--tl"></span>
+          <span class="vf-corner vf-corner--tr"></span>
+          <span class="vf-corner vf-corner--bl"></span>
+          <span class="vf-corner vf-corner--br"></span>
+          <span class="vf-label">الكادر</span>
+          <span class="vf-grid" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="crop-story" id="cropStory" aria-live="polite">
+        <div class="crop-story__head"><span class="dot"></span><span>القصة الحالية</span><span class="num" id="cropIndex">02 / 03</span></div>
+        <h3 id="cropTitle">الرجل</h3>
+        <p id="cropText">ثلث الصورة فقط. لكنه كل القصة. الإطار ضيّق، والعين تذهب إليه فورًا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 08 · الاصطناع ═══════════════════════ -->
+<section class="slide slide--dark slide--ai" id="slide-8" data-title="الاصطناع" data-theme="dark" aria-label="الشريحة 8: الاصطناع">
+  <div class="split">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 07 · الاصطناع</div>
+      <h2 class="h2" data-reveal style="--d:.06s">الوجه المثالي<br><em>الذي لم يوجد</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">هذا الوجه لم يُصوَّر. لم يولد. لم يوجد. صنعه نموذج في ثوانٍ… وأنت منحته الثقة في أجزاء من الثانية.</p>
+
+      <div class="ai-controls" data-reveal style="--d:.22s">
+        <button class="btn btn--solid" type="button" id="scanBtn"><span>شغّل الكاشف</span></button>
+        <span class="ai-status" id="aiStatus"><span class="dot"></span> جاهز للفحص</span>
+      </div>
+
+      <div class="ai-findings" id="aiFindings" data-reveal style="--d:.3s">
+        <span>الملاحظات</span>
+        <ul>
+          <li data-finding="1"><b class="num">01</b> تماثل مريب</li>
+          <li data-finding="2"><b class="num">02</b> بشرة بلا مسام</li>
+          <li data-finding="3"><b class="num">03</b> خلفية منصهرة</li>
+          <li data-finding="4"><b class="num">04</b> عينان بلا انعكاس</li>
+        </ul>
+      </div>
+
+      <p class="source" data-reveal style="--d:.38s"><span class="num">STYLEGAN</span> · THIS PERSON DOES NOT EXIST</p>
+    </div>
+
+    <div class="ai-wrap visual" data-reveal style="--d:.1s">
+      <div class="ai-card" id="aiCard">
+        <img src="assets/img/ai-face.jpg" alt="وجه طفل مولّد بالكامل بالذكاء الاصطناعي" loading="lazy">
+        <span class="scanline" aria-hidden="true"></span>
+        <span class="ai-grid" aria-hidden="true"></span>
+
+        <button class="hotspot hotspot--1" type="button" data-note="الملامح متماثلة بدرجة لا تحدث في الطبيعة بهذه الدقة."><span></span><em>تماثل مريب</em></button>
+        <button class="hotspot hotspot--2" type="button" data-note="البشرة ناعمة بلا مسام أو خطوط… كأنها مرسومة."><span></span><em>بشرة بلا مسام</em></button>
+        <button class="hotspot hotspot--3" type="button" data-note="خلفية ضبابية ومنصهرة، بلا تفاصيل يمكن التحقق منها."><span></span><em>خلفية منصهرة</em></button>
+        <button class="hotspot hotspot--4" type="button" data-note="لا انعكاس واضح في العينين. الضوء لا يأتي من مكان محدد."><span></span><em>عينان بلا انعكاس</em></button>
+
+        <span class="ai-stamp">مُولّد</span>
+      </div>
+      <p class="ai-caption" id="aiCaption">صورة كاملة… بلا شخص.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 09 · الصوت ═══════════════════════ -->
+<section class="slide slide--dark slide--call" id="slide-9" data-title="الصوت" data-theme="dark" aria-label="الشريحة 9: الصوت">
+  <div class="split split--reverse">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 08 · الصوت</div>
+      <h2 class="h2" data-reveal style="--d:.06s">الصوت<br><em>الذي يشبهها</em></h2>
+      <p class="lead" data-reveal style="--d:.14s">عيّنات قصيرة من صوتك قد تكفي لتقليد نبرتك. ومعها صورة… تكتمل الثقة. الخدعة لا تحتاج إلى كمال، بل إلى ما نعرفه.</p>
+
+      <div class="call-facts" data-reveal style="--d:.22s">
+        <div><b class="num">03</b><span>ثوانٍ قد تكفي</span></div>
+        <div><b class="num">01</b><span>صورة مطابقة</span></div>
+        <div><b class="num">00</b><span>شكّ في اللحظة</span></div>
+      </div>
+
+      <div class="inline-note" data-reveal style="--d:.3s">
+        <span class="inline-note__dot"></span>
+        الثقة ليست دليلًا. الصوت ليس هوية.
+      </div>
+
+      <p class="source" data-reveal style="--d:.38s"><span class="num">VOICE CLONING + FACE SWAP</span> · محاكاة توضيحية</p>
+    </div>
+
+    <div class="call-wrap visual" data-reveal style="--d:.1s">
+      <div class="phone" id="phone">
+        <img src="assets/img/deepfake.jpg" alt="امرأة في مكالمة فيديو" loading="lazy">
+        <div class="phone__shade"></div>
+        <div class="phone__scanlines" aria-hidden="true"></div>
+
+        <div class="phone__ui">
+          <div class="phone__top"><span class="live-dot"></span><span id="callStatus">مكالمة فيديو واردة</span></div>
+          <div class="phone__name">مريم</div>
+          <div class="phone__timer num" id="callTimer">00:00</div>
+
+          <div class="wave" id="wave" aria-hidden="true">
+            <i style="--h:30%"></i><i style="--h:62%"></i><i style="--h:44%"></i><i style="--h:82%"></i><i style="--h:54%"></i><i style="--h:38%"></i><i style="--h:72%"></i><i style="--h:48%"></i><i style="--h:88%"></i><i style="--h:42%"></i><i style="--h:66%"></i><i style="--h:34%"></i><i style="--h:76%"></i><i style="--h:52%"></i><i style="--h:40%"></i><i style="--h:68%"></i><i style="--h:46%"></i><i style="--h:80%"></i><i style="--h:36%"></i><i style="--h:58%"></i>
+          </div>
+
+          <div class="call-actions" id="callActions">
+            <button class="call-btn call-btn--decline" type="button" id="declineBtn" aria-label="رفض المكالمة"><span>✕</span>رفض</button>
+            <button class="call-btn call-btn--accept" type="button" id="acceptBtn" aria-label="الرد على المكالمة"><span>✆</span>رد</button>
+          </div>
+
+          <div class="call-reveal" id="callReveal">
+            <strong>لم تكن هي.</strong>
+            <span>لكنك أردت أن تكون.</span>
+            <button class="call-replay" type="button" id="callReplay">أعد المشهد</button>
+          </div>
+        </div>
+        <span class="call-tag">محاكاة</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 10 · التشريح ═══════════════════════ -->
+<section class="slide slide--dark slide--anatomy" id="slide-10" data-title="التشريح" data-theme="dark" aria-label="الشريحة 10: التشريح">
+  <div class="anatomy-layout">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 09 · التشريح</div>
+      <h2 class="h2" data-reveal style="--d:.06s">تشريح<br><em>الكذبة الواحدة</em></h2>
+      <p class="lead lead--small" data-reveal style="--d:.12s">الصورة ليست الخدعة. الخدعة هي الطبقات التي نلفّها حولها. فعّل الطبقات… وشاهد كيف تتحول صورة عادية إلى حقيقة يصعب إنكارها.</p>
+
+      <div class="layers" data-reveal style="--d:.18s">
+        <button class="layer" type="button" data-layer="frame" aria-pressed="false">
+          <span class="layer__num num">01</span>
+          <span class="layer__text"><b>الإطار</b><small>اقترب… ليختفي كل شيء سواه.</small></span>
+          <span class="layer__switch" aria-hidden="true"><i></i></span>
+        </button>
+        <button class="layer" type="button" data-layer="filter" aria-pressed="false">
+          <span class="layer__num num">02</span>
+          <span class="layer__text"><b>الفلتر</b><small>زد التشبّع… ليصبح المشهد أكبر من الحياة.</small></span>
+          <span class="layer__switch" aria-hidden="true"><i></i></span>
+        </button>
+        <button class="layer" type="button" data-layer="title" aria-pressed="false">
+          <span class="layer__num num">03</span>
+          <span class="layer__text"><b>العنوان</b><small>لا تترك لهم تفسيرًا. أعطهم عنوانًا.</small></span>
+          <span class="layer__switch" aria-hidden="true"><i></i></span>
+        </button>
+        <button class="layer" type="button" data-layer="repeat" aria-pressed="false">
+          <span class="layer__num num">04</span>
+          <span class="layer__text"><b>التكرار</b><small>ما يُرى كثيرًا… يبدو صحيحًا.</small></span>
+          <span class="layer__switch" aria-hidden="true"><i></i></span>
+        </button>
+        <button class="layer" type="button" data-layer="tribe" aria-pressed="false">
+          <span class="layer__num num">05</span>
+          <span class="layer__text"><b>القبيلة</b><small>اجعلها معركة بين «نحن» و«هم».</small></span>
+          <span class="layer__switch" aria-hidden="true"><i></i></span>
+        </button>
+      </div>
+
+      <div class="anatomy-actions" data-reveal style="--d:.26s">
+        <button class="btn btn--solid" type="button" id="publishBtn"><span>انشر</span><span class="btn__pulse" aria-hidden="true"></span></button>
+        <button class="reset-link" type="button" id="resetLayers">أعد الضبط</button>
+      </div>
+    </div>
+
+    <div class="anatomy-visual visual" data-reveal style="--d:.1s">
+      <div class="post-wrap">
+        <div class="ghost ghost--1" aria-hidden="true"></div>
+        <div class="ghost ghost--2" aria-hidden="true"></div>
+
+        <article class="post" id="post" aria-label="منشور تفاعلي">
+          <header class="post__head">
+            <span class="post__avatar">ص</span>
+            <span class="post__id"><b>صوت المدينة</b><small>منذ 3 دقائق · <span class="num">◉</span> عاجل</small></span>
+            <span class="post__more" aria-hidden="true">•••</span>
+          </header>
+
+          <div class="post__media">
+            <img src="assets/img/crowd.jpg" alt="حشد في حفل" loading="lazy">
+            <span class="post__live"><i></i> مباشر</span>
+          </div>
+
+          <p class="post__caption" id="postCaption">لن تصدق ما حدث في تلك الليلة… والحقيقة مخفية في التفاصيل.</p>
+
+          <footer class="post__foot">
+            <span>♥ <b class="num" id="likeCount">12</b></span>
+            <span>↻ <b class="num" id="shareCount">3</b></span>
+            <span>💬 <b class="num">1</b></span>
+          </footer>
+
+          <span class="post__tribe">أنت معنا</span>
+        </article>
+      </div>
+
+      <div class="reach">
+        <div class="reach__top">
+          <span class="reach__label">محاكاة انتشار</span>
+          <span class="reach__note" id="reachNote">فعّل الطبقات…</span>
+        </div>
+        <div class="reach__value"><strong class="num" id="reachNum">0</strong><span>وصول</span></div>
+        <div class="reach__bar"><i id="reachBar"></i></div>
+        <p class="reach__caption" id="reachCaption">كل طبقة صغيرة. مجموعها كارثة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 11 · الحصانة ═══════════════════════ -->
+<section class="slide slide--dark slide--immunity" id="slide-11" data-title="الحصانة" data-theme="dark" aria-label="الشريحة 11: الحصانة">
+  <div class="immunity-layout">
+    <div class="copy">
+      <div class="kicker" data-reveal><span class="kicker__dot"></span> 10 · الحصانة</div>
+      <h2 class="h2" data-reveal style="--d:.06s">لا تثق في عينك…<br><em>درّبها</em></h2>
+      <p class="lead lead--small" data-reveal style="--d:.12s">الحصانة ليست أن ترى كل شيء. هي أن تعرف متى تتوقف قبل المشاركة. خمسة أسئلة… قبل زرّ الإرسال.</p>
+
+      <div class="immunity-score" data-reveal style="--d:.18s">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-bg" cx="60" cy="60" r="52"/>
+          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"/>
+        </svg>
+        <div class="immunity-score__text"><b class="num" id="scoreNum">0</b><span>/ 5</span><small id="scoreLabel">ابدأ الفحص</small></div>
+      </div>
+
+      <div class="checks" data-reveal style="--d:.24s">
+        <button class="check" type="button" data-check="1" aria-pressed="false"><span class="check__box">✓</span><span><b>المصدر</b><small>من نشرها أولًا؟</small></span></button>
+        <button class="check" type="button" data-check="2" aria-pressed="false"><span class="check__box">✓</span><span><b>التاريخ</b><small>متى ظهرت فعلًا؟</small></span></button>
+        <button class="check" type="button" data-check="3" aria-pressed="false"><span class="check__box">✓</span><span><b>السياق</b><small>ماذا يوجد خارج الإطار؟</small></span></button>
+        <button class="check" type="button" data-check="4" aria-pressed="false"><span class="check__box">✓</span><span><b>الأصل</b><small>هل بحثت عنها معكوسة؟</small></span></button>
+        <button class="check" type="button" data-check="5" aria-pressed="false"><span class="check__box">✓</span><span><b>المصلحة</b><small>من يربح من تصديقي؟</small></span></button>
+      </div>
+
+      <p class="source" data-reveal style="--d:.3s"><span class="num">SOURCE · DATE · CONTEXT · ORIGINAL · INCENTIVE</span></p>
+    </div>
+
+    <div class="immunity-visual visual" data-reveal style="--d:.1s">
+      <div class="scan" id="scan">
+        <img src="assets/img/city.jpg" alt="شارع مدينة مزدحم" loading="lazy">
+        <div class="scan__shade" aria-hidden="true"></div>
+        <div class="loupe" id="loupe" aria-hidden="true"></div>
+        <span class="scan__reticle" aria-hidden="true"></span>
+        <span class="meta meta--1"><i></i> مصدر: مجهول</span>
+        <span class="meta meta--2"><i></i> تاريخ: محذوف</span>
+        <span class="meta meta--3"><i></i> أول ظهور: غير معروف</span>
+        <span class="scan__hint">مرّر العدسة فوق الصورة</span>
+      </div>
+      <p class="scan__caption">الصورة ليست دليلًا. سياقها هو الدليل.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 12 · الخاتمة ═══════════════════════ -->
+<section class="slide slide--closing" id="slide-12" data-title="الخاتمة" data-theme="dark" aria-label="الشريحة 12: الخاتمة">
+  <img class="closing-bg" src="assets/img/stars.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="closing-veil" aria-hidden="true"></div>
+  <div class="closing-glow" aria-hidden="true"></div>
+
+  <div class="closing-content">
+    <div class="closing-intro" id="closingIntro">
+      <div class="kicker"><span class="kicker__dot"></span> 11 · الخاتمة</div>
+      <h2 class="closing-title">أغمض عينيك</h2>
+      <p class="closing-lede">أخطر صورة… هي التي لا تشكّ فيها.</p>
+    </div>
+
+    <button class="closing-eye" id="closingEye" type="button" aria-label="أغمض العين لرؤية الخاتمة">
+      <svg viewBox="0 0 600 320" aria-hidden="true">
+        <defs>
+          <radialGradient id="irisGrad" cx="50%" cy="45%" r="55%">
+            <stop offset="0%" stop-color="#f3d493"/>
+            <stop offset="38%" stop-color="#b9853b"/>
+            <stop offset="70%" stop-color="#3a2a16"/>
+            <stop offset="100%" stop-color="#07090c"/>
+          </radialGradient>
+        </defs>
+        <path class="eye-outline" d="M40 160 Q300 8 560 160 Q300 312 40 160 Z"/>
+        <circle class="eye-iris" cx="300" cy="160" r="78" fill="url(#irisGrad)"/>
+        <circle class="eye-pupil" cx="300" cy="160" r="30"/>
+        <circle class="eye-glint" cx="324" cy="136" r="10"/>
+        <path class="eye-lash" d="M76 126 Q300 36 524 126"/>
+      </svg>
+      <span class="closing-eye__hint">اضغط</span>
+    </button>
+
+    <div class="closing-final" id="closingFinal" aria-hidden="true">
+      <p class="closing-final__big">العين لا تكذب…<br><em>لكنها تُخدع.</em></p>
+      <p class="closing-final__small">والعقل لا يرى… بل يصدّق.</p>
+      <div class="closing-sign">
+        <span class="closing-sign__line"></span>
+        <strong>مروة خليل هزاع</strong>
+        <span class="closing-sign__line"></span>
+      </div>
+      <div class="closing-actions">
+        <button class="btn btn--ghost" type="button" id="replayBtn"><span>أعد العرض</span><span class="btn__icon" aria-hidden="true">↺</span></button>
+        <span class="closing-credit num">12 / 12 · MKH 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="closing-credit-bottom">المراجع: Jastrow 1899 · Kanizsa 1955 · Adelson 1995 · Kitaoka 2003 · NASA/JPL · StyleGAN</p>
+</section>
+
+</main>
+
+<nav class="rail" id="rail" aria-label="التنقل بين الشرائح"></nav>
+
+<div class="controls" aria-label="أدوات العرض">
+  <button class="nav-btn" id="prevBtn" type="button" aria-label="الشريحة السابقة">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <span class="counter"><b id="curNum" class="num">01</b><span class="counter__sep">/</span><span class="num">12</span></span>
+  <button class="nav-btn" id="nextBtn" type="button" aria-label="الشريحة التالية">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+</div>
+
+<div class="help" id="help" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden>
+  <div class="help__panel">
+    <button class="help__close" id="helpClose" type="button" aria-label="إغلاق">×</button>
+    <div class="kicker"><span class="kicker__dot"></span> اختصارات</div>
+    <h3 id="helpTitle">كيف تتحرك داخل العرض؟</h3>
+    <ul class="help__list">
+      <li><span>الشريحة التالية</span><kbd>←</kbd><kbd>↓</kbd><kbd>مسافة</kbd></li>
+      <li><span>الشريحة السابقة</span><kbd>→</kbd><kbd>↑</kbd></li>
+      <li><span>ملء الشاشة</span><kbd>F</kbd></li>
+      <li><span>البداية / النهاية</span><kbd>Home</kbd><kbd>End</kbd></li>
+      <li><span>هذه القائمة</span><kbd>؟</kbd></li>
+    </ul>
+    <p class="help__note">كل الشرائح تفاعلية. حرّك المؤشر، اسحب، واضغط على العناصر الذهبية.</p>
+    <p class="help__note help__note--muted">للطباعة أو حفظ PDF: <span class="num">Ctrl / Cmd + P</span></p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/deck.js"></script>
+</body>
+</html>

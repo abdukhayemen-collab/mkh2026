@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>capture-idle</title>
+<style>html,body{margin:0;background:#111;color:#eee;font:12px monospace}canvas{max-width:180px;border:1px solid #444;margin:2px}</style>
+</head>
+<body>
+<div id="log">starting…</div>
+<video id="v" muted playsinline preload="auto"></video>
+<div id="shots"></div>
+<script>
+const params = new URLSearchParams(location.search);
+const src = params.get('src');
+const name = params.get('name') || 'shot';
+const times = (params.get('t') || '1').split(',').map(Number);
+const v = document.getElementById('v');
+const log = document.getElementById('log');
+const shotsBox = document.getElementById('shots');
+window.MKH_RESULT = { state: 'pending', steps: [], saved: [] };
+function step(s) { window.MKH_RESULT.steps.push(s); log.textContent = window.MKH_RESULT.steps.join('\n'); }
+function ready(s) { document.title = s; }
+v.addEventListener('error', () => { window.MKH_RESULT.error = 'video error code ' + (v.error && v.error.code); ready('error'); });
+v.src = src;
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function seek(t) {
+  return new Promise((res) => {
+    let done = false;
+    const finish = (why) => { if (done) return; done = true; v.removeEventListener('seeked', onSeek); res(why); };
+    const onSeek = () => finish('seeked');
+    v.addEventListener('seeked', onSeek);
+    try { v.currentTime = t; } catch (e) { finish('throw:' + e.message); }
+    setTimeout(() => finish('timeout'), 3000);
+  });
+}
+
+(async () => {
+  try {
+    step('waiting for metadata');
+    await new Promise((res, rej) => {
+      v.addEventListener('loadedmetadata', res, { once: true });
+      v.addEventListener('error', () => rej('metadata error'), { once: true });
+      setTimeout(() => rej('metadata timeout'), 20000);
+    });
+    const w = v.videoWidth, h = v.videoHeight;
+    window.MKH_RESULT.size = w + 'x' + h;
+    window.MKH_RESULT.duration = v.duration;
+    step('metadata ok: ' + w + 'x' + h + ' dur=' + v.duration.toFixed(2));
+
+    try { await v.play(); await sleep(600); v.pause(); step('primed by play/pause'); }
+    catch (e) { step('play() refused: ' + e.message); }
+
+    const scale = Math.min(1, 1400 / w);
+    const c = document.createElement('canvas');
+    c.width = Math.round(w * scale); c.height = Math.round(h * scale);
+    const ctx = c.getContext('2d');
+
+    for (let i = 0; i < times.length; i++) {
+      const target = Math.max(0, Math.min(v.duration - 0.05, times[i]));
+      const why = await seek(target);
+      step('shot ' + (i + 1) + ': seek ' + why + ' -> t=' + v.currentTime.toFixed(2) + ' rs=' + v.readyState);
+      await sleep(300);
+      ctx.drawImage(v, 0, 0, c.width, c.height);
+      const dataUrl = c.toDataURL('image/jpeg', 0.88);
+      const bytes = Math.round(dataUrl.length * 3 / 4);
+      step('  encoded ' + bytes + ' bytes');
+      const fname = name + '-' + (i + 1) + '.jpg';
+      const resp = await fetch('/__save/' + fname, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: dataUrl });
+      const txt = await resp.text();
+      step('  saved ' + txt);
+      window.MKH_RESULT.saved.push({ file: fname, t: target, bytes: bytes });
+      const preview = c.cloneNode(true);
+      shotsBox.appendChild(preview);
+    }
+    window.MKH_RESULT.state = 'done';
+    step('DONE');
+    ready('done');
+  } catch (e) {
+    window.MKH_RESULT.state = 'error';
+    window.MKH_RESULT.error = String(e);
+    step('FAILED: ' + e);
+    ready('error');
+  }
+})();
+</script>
+</body>
+</html>

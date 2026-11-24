@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MKH — التصميم معنا... له فن ومعنى</title>
+<meta name="description" content="MKH متجر تصميم وخدمات رقمية وتعليمية: أبحاث، عروض بوربوينت ثابتة ومتحركة، سير ذاتية، ألعاب تعليمية، إعلانات، شعارات، مطويات، مونتاج فيديو، كروت دعوة، وتصميم مواقع. أسعار واضحة من البداية.">
+<meta name="theme-color" content="#F7F4EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1622" media="(prefers-color-scheme: dark)">
+<meta name="author" content="MKH">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="MKH">
+<meta property="og:title" content="MKH — التصميم معنا... له فن ومعنى">
+<meta property="og:description" content="خدمات تصميم ورقمية وتعليمية بأسعار واضحة. شوف أعمالنا واطلب شغلك.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Almarai-800-arabic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Tajawal-400-arabic.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/brand/mark-mkh.png">
+
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/mkh.css">
+
+<noscript>
+  <style>
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .boot { display: none !important; }
+    body.is-locked { overflow: auto !important; }
+  </style>
+</noscript>
+
+<!-- نحدد المظهر قبل أول رسم للصفحة عشان ما يصير وميض بالمظهر الخاطئ -->
+<script>
+  (function () {
+    var t = 'light';
+    try {
+      var saved = localStorage.getItem('mkh:theme');
+      if (saved === 'light' || saved === 'dark') { t = saved; }
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { t = 'dark'; }
+    } catch (e) { }
+    document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.style.colorScheme = t;
+  })();
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#services">تخطَّ إلى الخدمات</a>
+
+<!-- ═══════════════════════════ شاشة الافتتاح ═══════════════════════════ -->
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <div class="boot-mark">
+      <span class="boot-chevron"></span>
+      <img src="assets/brand/mark-mkh.png" alt="" width="456" height="192">
+    </div>
+    <div class="boot-bar"><i></i></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ الهيدر ═══════════════════════════════ -->
+<header class="site-head" id="siteHead">
+  <div class="shell head-inner">
+
+    <a class="brand" href="#top" aria-label="MKH — العودة لأعلى الصفحة">
+      <span class="brand-plate">
+        <img src="assets/brand/mark-mkh.png" alt="شعار MKH" width="456" height="192">
+      </span>
+      <span class="brand-lines">
+        <b>MKH</b>
+        <i>تصميم · رقمي · تعليمي</i>
+      </span>
+    </a>
+
+    <nav class="head-nav" id="headNav" aria-label="التنقل الرئيسي">
+      <a href="#top">الرئيسية</a>
+      <a href="#services">الخدمات</a>
+      <a href="#planner">حاسبة الطلب</a>
+      <a href="#work">أعمالنا</a>
+      <a href="#sites">مواقعنا</a>
+      <a href="#why">ليش MKH؟</a>
+      <a href="#steps">طريقة الطلب</a>
+      <a class="head-nav-order" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer">اطلب على تيليجرام</a>
+    </nav>
+
+    <div class="head-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="تبديل المظهر الليلي والنهاري" title="تبديل المظهر">
+        <span class="tt-track" aria-hidden="true">
+          <span class="tt-thumb">
+            <svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g stroke-linecap="round"><path d="M12 2.6v2.6M12 18.8v2.6M2.6 12h2.6M18.8 12h2.6M5.4 5.4l1.8 1.8M16.8 16.8l1.8 1.8M18.6 5.4l-1.8 1.8M7.2 16.8l-1.8 1.8"/></g></svg>
+            <svg class="tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+          </span>
+        </span>
+      </button>
+
+      <a class="btn btn-gold btn-sm head-cta" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer" data-magnetic>
+        <span>اطلب شغلك</span>
+      </a>
+
+      <button type="button" class="nav-burger" id="navBurger" aria-label="فتح القائمة" aria-expanded="false" aria-controls="headNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- شريط تقدّم القراءة -->
+<div class="read-rail" id="readRail" aria-hidden="true">
+  <span class="rr-line"><i id="rrFill"></i></span>
+  <span class="rr-chevron"></span>
+  <span class="rr-num" id="rrNum">0%</span>
+</div>
+
+<main id="top">
+
+  <!-- ═══════════════════════════════ الواجهة ═══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="chev chev-1"></span>
+      <span class="chev chev-2"></span>
+      <span class="chev chev-3"></span>
+      <span class="hero-glow"></span>
+      <span class="grain"></span>
+    </div>
+
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal" data-reveal>
+          <span class="dot"></span>
+          متجر تصميم وخدمات رقمية وتعليمية
+        </p>
+
+        <h1 class="hero-title">
+          <span class="reveal" data-reveal data-delay="60">التصميم معنا</span><span class="dots reveal" data-reveal data-delay="120">...</span>
+          <span class="reveal line-2" data-reveal data-delay="180">له <em>فن</em> و<em>معنى</em></span>
+        </h1>
+
+        <p class="hero-tag reveal" data-reveal data-delay="240">
+          <span class="hero-tag-inner">لا مبالغة ولا احتيال.. أسعارنا ولا بالخيال</span>
+        </p>
+
+        <p class="hero-desc reveal" data-reveal data-delay="300">
+          عندك فكرة وتبغى تطلعها بأحلى صورة؟ أبشر، من الأبحاث والعروض إلى التصاميم والمواقع،
+          نرتّبها لك بذوق وإبداع، وبأسعار على قدّ اليد.
+        </p>
+
+        <div class="hero-cta reveal" data-reveal data-delay="360">
+          <a class="btn btn-gold btn-lg" href="#work" data-magnetic>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11a2 2 0 0 1-2 2h-7l-4.6 3.1A.6.6 0 0 1 5.4 21v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><circle cx="8.5" cy="11.5" r="1.3"/><circle cx="12" cy="11.5" r="1.3"/><circle cx="15.5" cy="11.5" r="1.3"/></svg>
+            <span>شف أعمالنا</span>
+          </a>
+          <a class="btn btn-ghost btn-lg" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer" data-magnetic>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 4.3 2.9 11.5c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.4c.2.7 1.1.9 1.6.3l2.4-2.7 4.5 3.3c.6.4 1.4.1 1.6-.6l3.1-14.8c.2-.9-.7-1.6-1.5-1.3z"/></svg>
+            <span>اطلب شغلك الحين</span>
+          </a>
+        </div>
+
+        <ul class="hero-chips reveal" data-reveal data-delay="420">
+          <li>١١ خدمة جاهزة</li>
+          <li>أسعار معلنة</li>
+          <li>تعديلات حتى الرضا</li>
+        </ul>
+      </div>
+
+      <div class="hero-art" data-parallax="0.06">
+        <div class="art-stage" id="artStage">
+          <div class="art-card art-main" data-depth="0.5">
+            <div class="art-plate">
+              <img src="assets/brand/logo-original.png" alt="شعار MKH الأصلي" width="640" height="638">
+            </div>
+            <span class="art-plate-shine" aria-hidden="true"></span>
+          </div>
+
+          <figure class="art-card art-mini art-mini-1" data-depth="1.4">
+            <img src="assets/works/thumbs/deck-slide-3.jpg" alt="شريحة من عرض تقديمي" loading="lazy" decoding="async" width="800" height="450">
+            <figcaption>عرض تقديمي متحرك</figcaption>
+          </figure>
+
+          <figure class="art-card art-mini art-mini-2" data-depth="1.9">
+            <img src="assets/works/thumbs/cv-design-2.jpg" alt="تصميم سيرة ذاتية" loading="lazy" decoding="async" width="900" height="1300">
+            <figcaption>تصميم سيرة ذاتية</figcaption>
+          </figure>
+
+          <figure class="art-card art-mini art-mini-3" data-depth="1.2">
+            <img src="assets/works/thumbs/pptx-game-poster.jpg" alt="لعبة تعليمية بالبوربوينت" loading="lazy" decoding="async" width="900" height="510">
+            <figcaption>لعبة تعليمية</figcaption>
+          </figure>
+
+          <figure class="art-card art-mini art-mini-4" data-depth="2.2">
+            <img src="assets/works/thumbs/invitation-card.jpg" alt="كرت دعوة" loading="lazy" decoding="async" width="900" height="575">
+            <figcaption>كروت دعوة</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-cue" href="#services" aria-label="انزل للخدمات">
+      <span class="sc-mouse"><i></i></span>
+      <span class="sc-text">تحرّك للأسفل</span>
+    </a>
+  </section>
+
+  <!-- ═════════════════════════════ الشريط المتحرك ═════════════════════════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>التصميم معنا... له فن ومعنى</span><i class="mq-sep"></i>
+      <span>لا مبالغة ولا احتيال.. أسعارنا ولا بالخيال</span><i class="mq-sep"></i>
+      <span>أبحاث · عروض · سير ذاتية · ألعاب تعليمية</span><i class="mq-sep"></i>
+      <span>إعلانات · شعارات · مطويات · مونتاج فيديو</span><i class="mq-sep"></i>
+      <span>كروت دعوة · تصميم مواقع</span><i class="mq-sep"></i>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ الخدمات ═══════════════════════════════ -->
+  <section class="section" id="services">
+    <div class="shell">
+      <header class="sec-head">
+        <p class="eyebrow reveal" data-reveal><span class="dot"></span> خدماتنا وأسعارنا</p>
+        <h2 class="sec-title reveal" data-reveal data-delay="60">وش نقدر نضبط لك؟</h2>
+        <p class="sec-desc reveal" data-reveal data-delay="120">
+          مهما كانت فكرتك، خلّ علينا ترتيبها وتصميمها، وأنت استمتع بالنتيجة.
+        </p>
+      </header>
+
+      <div class="services" id="servicesGrid"><!-- يُبنى من JS --></div>
+
+      <div class="note note-warn reveal" data-reveal>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.4"/><path d="M12 7.4v5.6M12 16.4v.2"/></svg>
+        <p id="priceNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ مُخطِّط الطلب ═══════════════════════════ -->
+  <section class="section section-alt" id="planner">
+    <div class="shell">
+      <header class="sec-head">
+        <p class="eyebrow reveal" data-reveal><span class="dot"></span> حاسبة الطلب</p>
+        <h2 class="sec-title reveal" data-reveal data-delay="60">ركّب طلبك وشوف الحساب</h2>
+        <p class="sec-desc reveal" data-reveal data-delay="120">
+          اختر الخدمات، حدّد الكميات، والحساب يتحدّث معك مباشرة. بعدها انسخ الملخص وأرسله لنا على تيليجرام.
+        </p>
+      </header>
+
+      <div class="planner">
+        <div class="planner-list" id="plannerList"><!-- يُبنى من JS --></div>
+
+        <aside class="planner-sum" id="plannerSum">
+          <div class="ps-head">
+            <h3>ملخّص الطلب</h3>
+            <button type="button" class="ps-clear" id="plannerClear">تفريغ</button>
+          </div>
+
+          <ul class="ps-items" id="plannerItems"></ul>
+
+          <div class="ps-empty" id="plannerEmpty">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11a2 2 0 0 1-2 2h-7l-4.6 3.1A.6.6 0 0 1 5.4 21v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg>
+            <p>ما اخترت شي بعد.<br>ابدأ من الخدمات على اليمين، وكل شي بيظهر هنا.</p>
+          </div>
+
+          <div class="ps-total">
+            <span>المجموع التقديري</span>
+            <b><i id="plannerTotal">0</i> <small id="plannerUnit">ريال</small></b>
+          </div>
+
+          <p class="ps-foot">
+            الأسعار محسوبة على الأسعار المعلنة فقط. السعر النهائي يعتمد على تفاصيل الطلب ونطاق العمل.
+          </p>
+
+          <div class="ps-actions">
+            <button type="button" class="btn btn-dark btn-block" id="plannerCopy" disabled>
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.4"/><path d="M15 5.4A2.4 2.4 0 0 0 12.6 3H5.4A2.4 2.4 0 0 0 3 5.4v7.2A2.4 2.4 0 0 0 5.4 15"/></svg>
+              <span>انسخ الطلب</span>
+            </button>
+            <a class="btn btn-gold btn-block" id="plannerSend" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer">
+              <span>افتح تيليجرام وأرسله</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ الأعمال ═══════════════════════════════ -->
+  <section class="section" id="work">
+    <div class="shell">
+      <header class="sec-head">
+        <p class="eyebrow reveal" data-reveal><span class="dot"></span> معرض الأعمال</p>
+        <h2 class="sec-title reveal" data-reveal data-delay="60">مو بس كلام.. شوف شغلنا بنفسك</h2>
+        <p class="sec-desc reveal" data-reveal data-delay="120">
+          كل تصميم له فكرته، وكل مشروع له حكايته. تصفّح أعمالنا وشوف بنفسك.
+        </p>
+      </header>
+
+      <div class="filters reveal" data-reveal role="tablist" aria-label="تصنيفات الأعمال" id="filters"></div>
+
+      <p class="works-count" id="worksCount" aria-live="polite"></p>
+
+      <div class="masonry" id="masonry"><!-- يُبنى من JS --></div>
+
+      <div class="works-more">
+        <button type="button" class="btn btn-outline btn-lg" id="worksMore" hidden>اعرض المزيد من الأعمال</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ المواقع ═══════════════════════════════ -->
+  <section class="section section-alt" id="sites">
+    <div class="shell">
+      <header class="sec-head">
+        <p class="eyebrow reveal" data-reveal><span class="dot"></span> مشاريع مواقع</p>
+        <h2 class="sec-title reveal" data-reveal data-delay="60">من التصميم إلى المتصفح</h2>
+        <p class="sec-desc reveal" data-reveal data-delay="120">
+          موقعان صمّمناهما بالكامل. تقدر تتفرّج على المعاينة المباشرة من هنا، أو تفتح الموقع الأصلي بتفاصيله.
+        </p>
+      </header>
+
+      <div class="site-cards" id="siteCards"><!-- يُبنى من JS --></div>
+
+      <div class="note reveal" data-reveal>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.4"/><path d="M12 10.6v6M12 7.4v.2"/></svg>
+        <p>
+          المعاينة داخل إطار المتصفح حقيقية وحيّة. صور الأغلفة أعلاه مأخوذة من محتوى الموقعين نفسهما،
+          والإطارات شكل عرض فقط وليست لقطات شاشة.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ليش MKH ═══════════════════════════════ -->
+  <section class="section" id="why">
+    <div class="shell">
+      <header class="sec-head">
+        <p class="eyebrow reveal" data-reveal><span class="dot"></span> الفرق معنا</p>
+        <h2 class="sec-title reveal" data-reveal data-delay="60">طيب، ليش تختار MKH؟</h2>
+      </header>
+      <div class="why-grid" id="whyGrid"><!-- يُبنى من JS --></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ الخطوات ═══════════════════════════════ -->
+  <section class="section section-alt" id="steps">
+    <div class="shell">
+      <header class="sec-head">
+        <p class="eyebrow reveal" data-reveal><span class="dot"></span> طريقة الطلب</p>
+        <h2 class="sec-title reveal" data-reveal data-delay="60">طلبك علينا.. والباقي سهل</h2>
+      </header>
+
+      <ol class="steps" id="stepsList"><!-- يُبنى من JS --></ol>
+
+      <div class="steps-cta reveal" data-reveal>
+        <a class="btn btn-gold btn-lg" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer" data-magnetic>
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 4.3 2.9 11.5c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.4c.2.7 1.1.9 1.6.3l2.4-2.7 4.5 3.3c.6.4 1.4.1 1.6-.6l3.1-14.8c.2-.9-.7-1.6-1.5-1.3z"/></svg>
+          <span>يلا نبدأ</span>
+        </a>
+        <p>راسلنا على تيليجرام <b class="ltr">@MKH_ksa</b> — نرد عليك بأسرع وقت.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ القسم الختامي ═══════════════════════════ -->
+  <section class="finale" id="order">
+    <div class="finale-bg" aria-hidden="true">
+      <span class="chev chev-1"></span>
+      <span class="chev chev-2"></span>
+      <span class="grain"></span>
+    </div>
+    <div class="shell finale-inner">
+      <img class="finale-mark" src="assets/brand/mark-lockup.png" alt="MKH" width="624" height="470" loading="lazy" decoding="async">
+      <h2 class="finale-title reveal" data-reveal>عندك فكرة؟ خلّنا نحولها لشيء يفتح النفس.</h2>
+      <p class="finale-desc reveal" data-reveal data-delay="80">
+        سواء مشروع بسيط أو فكرة كبيرة، أرسل لنا وش في بالك، ونشوف كيف نطلعها بأفضل صورة.
+      </p>
+      <a class="btn btn-gold btn-xl reveal" data-reveal data-delay="160" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer" data-magnetic>
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 4.3 2.9 11.5c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.4c.2.7 1.1.9 1.6.3l2.4-2.7 4.5 3.3c.6.4 1.4.1 1.6-.6l3.1-14.8c.2-.9-.7-1.6-1.5-1.3z"/></svg>
+        <span>اطلب شغلك الحين</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════ التذييل ═══════════════════════════════ -->
+<footer class="site-foot">
+  <div class="shell foot-grid">
+    <div class="foot-brand">
+      <span class="foot-plate">
+        <img src="assets/brand/logo-original.png" alt="شعار MKH الأصلي" width="640" height="638" loading="lazy" decoding="async">
+      </span>
+      <p class="foot-tag">التصميم معنا... له فن ومعنى</p>
+      <p class="foot-sub">لا مبالغة ولا احتيال.. أسعارنا ولا بالخيال</p>
+    </div>
+
+    <nav class="foot-col" aria-label="أقسام الموقع">
+      <h3>أقسام الموقع</h3>
+      <ul>
+        <li><a href="#services">الخدمات والأسعار</a></li>
+        <li><a href="#planner">حاسبة الطلب</a></li>
+        <li><a href="#work">معرض الأعمال</a></li>
+        <li><a href="#sites">مشاريع المواقع</a></li>
+        <li><a href="#why">ليش تختار MKH؟</a></li>
+        <li><a href="#steps">طريقة الطلب</a></li>
+      </ul>
+    </nav>
+
+    <div class="foot-col">
+      <h3>تواصل وطلب</h3>
+      <ul>
+        <li>
+          <a class="foot-tg" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 4.3 2.9 11.5c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.4c.2.7 1.1.9 1.6.3l2.4-2.7 4.5 3.3c.6.4 1.4.1 1.6-.6l3.1-14.8c.2-.9-.7-1.6-1.5-1.3z"/></svg>
+            <span class="ltr">@MKH_ksa</span>
+          </a>
+        </li>
+        <li><a href="#order">ابدأ طلبك الحين</a></li>
+      </ul>
+      <p class="foot-swatches" aria-label="ألوان الهوية">
+        <i style="--c:#1A3149"></i><i style="--c:#0C1A28"></i><i style="--c:#F5AD1B"></i><i style="--c:#F7F4EE"></i>
+      </p>
+    </div>
+  </div>
+
+  <div class="shell foot-bottom">
+    <p>© <span id="year">2026</span> MKH — جميع الحقوق محفوظة.</p>
+    <p class="foot-note">صُنع بعناية · كحلي MKH <span class="ltr">#1A3149</span> وذهبي MKH <span class="ltr">#F5AD1B</span></p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════ أدوات عائمة ═══════════════════════ -->
+<a class="fab-tg" id="fabTg" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer" aria-label="اطلب على تيليجرام">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 4.3 2.9 11.5c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.4c.2.7 1.1.9 1.6.3l2.4-2.7 4.5 3.3c.6.4 1.4.1 1.6-.6l3.1-14.8c.2-.9-.7-1.6-1.5-1.3z"/></svg>
+  <span class="fab-label">اطلب شغلك</span>
+</a>
+
+<button type="button" class="to-top" id="toTop" aria-label="العودة لأعلى الصفحة">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- شريط الطلب على الجوال -->
+<div class="mobile-bar" id="mobileBar">
+  <a class="mb-btn mb-btn-outline" href="#services">شوف الخدمات</a>
+  <a class="mb-btn mb-btn-gold" href="https://t.me/MKH_ksa" target="_blank" rel="noopener noreferrer">اطلب شغلك الحين</a>
+</div>
+
+<!-- ═══════════════════════════ نافذة المعاينة ═══════════════════════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
+  <div class="lb-backdrop" id="lbBackdrop"></div>
+  <div class="lb-shell" role="document">
+    <header class="lb-head">
+      <div class="lb-head-text">
+        <p class="lb-eyebrow" id="lbEyebrow"></p>
+        <h2 class="lb-title" id="lbTitle"></h2>
+      </div>
+      <div class="lb-head-tools">
+        <div class="lb-devices" id="lbDevices" hidden>
+          <button type="button" class="lb-device" data-device="desktop" aria-pressed="true" aria-label="عرض بحجم الكمبيوتر" title="عرض بحجم الكمبيوتر">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 17v3.5"/></svg>
+          </button>
+          <button type="button" class="lb-device" data-device="mobile" aria-pressed="false" aria-label="عرض بحجم الجوال" title="عرض بحجم الجوال">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.6 18.6h2.8"/></svg>
+          </button>
+        </div>
+        <button type="button" class="lb-iconbtn" id="lbClose" aria-label="إغلاق المعاينة (Esc)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="lb-body">
+      <div class="lb-stage" id="lbStage"></div>
+      <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="العمل السابق">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="العمل التالي">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <footer class="lb-foot">
+      <div class="lb-meta" id="lbMeta"></div>
+      <div class="lb-thumbs" id="lbThumbs"></div>
+      <div class="lb-actions" id="lbActions"></div>
+    </footer>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/js/works-data.js"></script>
+<script src="assets/js/mkh.js"></script>
+</body>
+</html>
